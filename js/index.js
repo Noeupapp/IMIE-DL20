@@ -1,7 +1,7 @@
 var watchID;
 
 $(document).ready(function(){
-    $("#get-accel").hide();
+    $("#stop-accel").hide();
 
     $("#get-accel").on("click",function(e){
             e.preventDefault();
