@@ -1,7 +1,12 @@
+var watchID;
+
 $(document).ready(function(){
+    $("#get-accel").hide();
 
     $("#get-accel").on("click",function(e){
             e.preventDefault();
+            $(this).hide();
+            $("#stop-accel").show();
             function onSuccess(acceleration) {
                 $("#zone-accel").html('Acceleration X: ' + acceleration.x + '<br>' +
                       'Acceleration Y: ' + acceleration.y + '<br>' +
@@ -14,7 +19,15 @@ $(document).ready(function(){
                 alert('onError!');
             }
 
-            navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+            watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError,{frequency:1000});
+    })
+
+    $("#stop-accel").on("click",function(e){
+            e.preventDefault();
+            $(this).hide();
+            $("#get-accel").show();
+            navigator.accelerometer.clearWatch(watchID);
+            $("#zone-accel").html("");
     })
 
 })
