@@ -40,3 +40,12 @@ body{
 #gmaps #map{
     height: 400px;
 }
+
+#store{
+    margin-top: 30px;
+    text-align: center;
+}
+
+#store textarea{
+    width:100%;
+}

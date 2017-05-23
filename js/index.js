@@ -1,6 +1,12 @@
 var watchID;
 
 $(document).ready(function(){
+    var hasDataToSave = window.localStorage.getItem("dataToSave");
+    if(hasDataToSave !== null) $("#data-to-save").val(hasDataToSave)
+
+
+
+
     $("#stop-accel").hide();
 
     $("#get-accel").on("click",function(e){
@@ -90,5 +96,12 @@ $(document).ready(function(){
 
     })
 
+      $("#save-store").on("click",function(e){
+        e.preventDefault();
+
+        var dataToSave = $("#data-to-save").val();
+        window.localStorage.setItem("dataToSave",dataToSave)
+
+    })
 
 })
