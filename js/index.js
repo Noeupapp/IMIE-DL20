@@ -39,7 +39,7 @@ $(document).ready(function(){
                 destinationType: Camera.DestinationType.FILE_URI, correctOrientation : true });
 
             function onSuccessCamera(imageURI) {
-                $("#zone-photo img").attr("src",imageURI);
+                $("#zone-photo img").attr("src","data:image/jpeg;base64," + imageURI);
                 $("#zone-photo").show();
                 navigator.vibrate(2000);
             }
