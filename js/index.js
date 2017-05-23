@@ -51,4 +51,28 @@ $(document).ready(function(){
     })
 
 
+    $("#get-mat-toast").on("click",function(e){
+        e.preventDefault();
+        Materialize.toast('I am a toast!', 2000)
+    })
+
+
+    $("#get-native-toast").on("click",function(e){
+        e.preventDefault();
+
+        function alertDismissed() {
+            // do something
+        }
+
+        navigator.notification.alert(
+            'C\'est une notification',  // message
+            alertDismissed,         // callback
+            'Demo',            // title
+            'J\'ai compris'                  // buttonName
+        );
+
+
+    })
+
+
 })
