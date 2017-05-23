@@ -30,4 +30,25 @@ $(document).ready(function(){
             $("#zone-accel").html("");
     })
 
+
+
+    $("#get-photo").on("click",function(e){
+            e.preventDefault();
+
+            navigator.camera.getPicture(onSuccessCamera, onFailCamera, { quality: 50,
+                destinationType: Camera.DestinationType.FILE_URI, correctOrientation : true });
+
+            function onSuccessCamera(imageURI) {
+                $("#zone-photo img").attr("src",imageURI);
+                $("#zone-photo").show();
+                navigator.vibrate(2000);
+            }
+
+            function onFailCamera(message) {
+                alert('Failed because: ' + message);
+            }
+
+    })
+
+
 })
