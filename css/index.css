@@ -30,3 +30,13 @@ body{
     text-align:center;
     margin-top:30px;
 }
+
+#gmaps{
+    margin-top:30px;
+    text-align: center;
+}
+
+
+#gmaps #map{
+    height: 400px;
+}

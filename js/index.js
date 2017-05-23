@@ -74,5 +74,21 @@ $(document).ready(function(){
 
     })
 
+    $("#get-position").on("click",function(e){
+        e.preventDefault();
+
+         var onSuccessPostion = function(position) {
+            setMarker(position.coords.latitude,position.coords.longitude);
+        };
+
+    function onErrorPostion(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+    }
+
+    navigator.geolocation.getCurrentPosition(onSuccessPostion, onErrorPostion);
+
+    })
+
 
 })
